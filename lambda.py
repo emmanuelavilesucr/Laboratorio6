@@ -8,16 +8,24 @@ def get_user_input():
         print("Input invalido. Por favor ingrese numeros.")
         return get_user_input()
 
+
 def ejecutar_operacion(user_input, callback):
     num1, num2, operation = user_input
-    if operation == '+':
-    elif operation == '-':
-    elif operation == '*':
-    elif operation == '/':
+    operations = {
+        '+': lambda x, y: x + y,
+        '-': lambda x, y: x - y,
+        '*': lambda x, y: x * y,
+        '/': lambda x, y: x / y if y != 0 else "Error: No es posible dividir por cero.",
+    }
+
+    if operation in operations:
+        result = operations[operation](num1, num2)
     else:
         result = "Operacion invalida"
 
     print("Resultado:", result)
+
+
 
 def main():
     while True:
