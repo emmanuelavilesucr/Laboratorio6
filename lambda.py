@@ -37,11 +37,7 @@ def main():
 
         print("\nCalculando...")
 
-        if user_input[2] in operations:
-            ejecutar_operacion(user_input, operations[user_input[2]])
-        else:
-            print("Operacion invalida. Seleccione (+, -, *, /) o  escriba 'exit' para salir.")
+        ejecutar_operacion(user_input, None)
 
-if __name__ == "__main__":
-    main()
+main()
 
