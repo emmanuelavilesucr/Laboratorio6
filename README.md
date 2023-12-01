@@ -4,7 +4,7 @@
 
 ## eventmanager.py
 
-### Descripción de events.py:
+### Descripción de eventmanager.py:
 
 - **eventmanager.py:** Simula una gestión de eventos simple. Permite a los suscriptores registrarse para recibir notificaciones cuando ocurren eventos específicos y cancelar su suscripción. La función `notify` se utiliza para notificar a los suscriptores cuando ocurre un evento.
 
