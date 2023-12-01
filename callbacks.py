@@ -35,14 +35,26 @@ class RealTimeDataManager:
         self.data["humedad"] += random.uniform(-2.0, 2.0)
         self.event_manager.notify('datos_actualizados', self.data)        
 
-# Actualizaciones en tiempo real en segundo plano
-import threading
-update_thread = threading.Thread(target=real_time_data_manager.start_real_time_updates)
-update_thread.start()
 
-try:
-    while True:
-        time.sleep(1)
-except KeyboardInterrupt:
-    print("\nPrograma terminado.")
+# Módulo ejecutable
+if __name__ == "__main__":
+    event_manager = EventManager()
+
+    def callback(data):
+        print(f'Datos en tiempo real actualizados: {data}')
+
+    event_manager.subscribe('datos_actualizados', callback)
+    real_time_data_manager = RealTimeDataManager(event_manager)
+
+
+    # Actualizaciones en tiempo real en segundo plano
+    import threading
+    update_thread = threading.Thread(target=real_time_data_manager.start_real_time_updates)
+    update_thread.start()
+
+    try:
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        print("\nPrograma terminado.")
 
