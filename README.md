@@ -2,11 +2,11 @@
 
 # Ejercicio: Callbacks en Python
 
-## events.py
+## eventmanager.py
 
 ### Descripción de events.py:
 
-- **events.py:** Simula una gestión de eventos simple. Permite a los suscriptores registrarse para recibir notificaciones cuando ocurren eventos específicos y cancelar su suscripción. La función `notify` se utiliza para notificar a los suscriptores cuando ocurre un evento.
+- **eventmanager.py:** Simula una gestión de eventos simple. Permite a los suscriptores registrarse para recibir notificaciones cuando ocurren eventos específicos y cancelar su suscripción. La función `notify` se utiliza para notificar a los suscriptores cuando ocurre un evento.
 
 ### Cambios realizados en el archivo:
 
@@ -74,9 +74,13 @@ else:
 
 print("Resultado:", result)
 
+ ```
 
 **Conclusiones:**
 - Se han utilizado funciones lambda para asociar cada operación con su función matemática correspondiente.
 - La ejecución de operaciones ahora se realiza mediante funciones lambda, proporcionando una mayor concisión y claridad en el código
 - Se ha logrado implementar correctamente la gestión de eventos mediante callbacks y la utilización de funciones lambda para operaciones matemáticas.
 - Los cambios realizados permiten una mayor flexibilidad y mantenibilidad del código, facilitando la extensión y comprensión de las funcionalidades implementadas.
+---
+
+
